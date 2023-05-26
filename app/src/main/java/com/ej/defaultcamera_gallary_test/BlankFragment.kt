@@ -46,8 +46,9 @@ class BlankFragment : Fragment() {
         }
         binding.imageView.setOnClickListener {
             val transition = parentFragmentManager.beginTransaction()
-            val fragment = BlankFragment.newInstance()
+            val fragment = FullScreenImageFragment.newInstance(image!!)
             transition.replace(R.id.fragmentContainerView, fragment)
+            transition.addToBackStack("df")
             transition.commit()
         }
     }
